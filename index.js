@@ -62,11 +62,11 @@ client.on(Events.MessageCreate, async message => {
         .setTitle('<:vespera:1490821792699384029> Oyuncu Sorgu Paneli')
         .setDescription(
             '> Aşağıdaki butonlardan birini seçin.\n\n' +
-            '**<:icons_id98:1488195005741924362> ID Sorgu**\n' +
+            '**<:id:1509212294624579714> ID Sorgu**\n' +
             '> Sunucu ID numarasıyla oyuncu ara\n\n' +
-            '**<:name_tag6:1488195090500550686> İsim Sorgu**\n' +
+            '**<:isim:1509212301604163745> İsim Sorgu**\n' +
             '> Oyuncu adıyla arama yap\n\n' +
-            '**<a:loading_dots:1488195048473493685> Sunucu Durumu**\n' +
+            '**<a:dudurm:1509212282830328008> Sunucu Durumu**\n' +
             '> Anlık sunucu bilgilerini görüntüle'
         )
         .setFooter({ 
@@ -78,17 +78,17 @@ client.on(Events.MessageCreate, async message => {
         new ButtonBuilder()
             .setCustomId('panel_id_sorgu')
             .setLabel('ID Sorgu')
-            .setEmoji("<:icons_id98:1488195005741924362>")
+            .setEmoji("<:id:1509212294624579714>")
             .setStyle(ButtonStyle.Primary),
         new ButtonBuilder()
             .setCustomId('panel_isim_sorgu')
             .setLabel(' Isim Sorgu')
-            .setEmoji('<:name_tag6:1488195090500550686>')
+            .setEmoji('<:isim:1509212301604163745>')
             .setStyle(ButtonStyle.Primary),
         new ButtonBuilder()
             .setCustomId('panel_sunucu_durumu')
             .setLabel('Sunucu Durumu')
-            .setEmoji("<:Blurple_Server:1488197856060768447>")
+            .setEmoji("<:sunucu:1509212307748683876>")
             .setStyle(ButtonStyle.Success)
     );
 
@@ -248,21 +248,21 @@ client.on(Events.InteractionCreate, async interaction => {
                     })
                     .setThumbnail(banner_detail || null)
                     .setDescription(
-                        `<:wek:1488195533502939146>  WELLGUN\n` +
+                        `<:well2:1509212795839709264>  WELLGUN\n` +
                         `> Anlık sunucu durumu aşağıda listelenmiştir.\n\n` +
                         `────────────────────────────────────`
                     )
                     .addFields(
-                        { name: '<:wek:1488195533502939146> Sunucu Adı', value: `\`${sv_projectName ?? 'WELLGUN #V8'}\``, inline: false },
-                        { name: '<:ProfileImage_main:1488195843071672350> Durum', value: durum, inline: true },
-                        { name: '<:member_list_icon:1488195069298085929> Oyuncu Sayısı', value: `\`${clients} / ${sv_maxclients}\``, inline: true },
-                        { name: '<:Large_Chest_S_JE1:1488196645014212628> Kaynak Sayısı', value: `\`${resources.length}\``, inline: true },
-                        { name: '<a:game:1488196627020644462> Oyun Tipi', value: `\`${data.gametype ?? 'Bilinmiyor'}\``, inline: true },
-                        { name: '<:asia_map:1488196600462311486> Harita', value: `\`${data.mapname ?? 'Bilinmiyor'}\``, inline: true },
+                        { name: '<:well2:1509212795839709264> Sunucu Adı', value: `\`${sv_projectName ?? 'WELLGUN #V8'}\``, inline: false },
+                        { name: '<:abcdsa:1509212658614931738> Durum', value: durum, inline: true },
+                        { name: '<:member:1509212715451945000> Oyuncu Sayısı', value: `\`${clients} / ${sv_maxclients}\``, inline: true },
+                        { name: '<:chest:1509212666382516396> Kaynak Sayısı', value: `\`${resources.length}\``, inline: true },
+                        { name: '<a:tatlii:1509212731490828378> Oyun Tipi', value: `\`${data.gametype ?? 'Bilinmiyor'}\``, inline: true },
+                        { name: '<:map:1509212708954705971> Harita', value: `\`${data.mapname ?? 'Bilinmiyor'}\``, inline: true },
                         { name: 'Yönetim (Leaders)', value: `\`${Leader ?? 'Bilinmiyor'}\``, inline: false },
                         { name: 'Geliştiriciler', value: `\`${Developer ?? 'Bilinmiyor'}\``, inline: false },
                         { name: '🔗 Discord', value: `${Discord ?? 'Yok'}`, inline: true },
-                        { name: `<:Large_Chest_S_JE1:1488196645014212628> Doluluk  [${bar}]`, value: `%${Math.round((clients / sv_maxclients) * 100)} dolu`, inline: false },
+                        { name: `<:chest:1509212666382516396> Doluluk  [${bar}]`, value: `%${Math.round((clients / sv_maxclients) * 100)} dolu`, inline: false },
                         { name: '📜 Script Örnekleri', value: `\`\`\`${resources.slice(0, 10).join(', ')}... ve dahası\`\`\``, inline: false },
                         { 
     name: '🕒 Bot Durumu', 
